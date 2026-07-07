@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jorge Fouérè Andrade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #10141A;
+    --surface: #171C24;
+    --surface-hover: #1D2430;
+    --text: #ECE8E1;
+    --muted: #878D97;
+    --accent: #C08A45;
+    --accent-soft: rgba(192,138,69,0.14);
+    --line: rgba(236,232,225,0.10);
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html, body{ height:100%; }
+
+  body{
+    background: radial-gradient(120% 120% at 50% -10%, #1A2029 0%, #10141A 55%, #0C0F14 100%);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 32px 20px;
+    min-height:100vh;
+  }
+
+  .card{
+    width:100%;
+    max-width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 44px 36px 36px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55);
+  }
+
+  .monogram{
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(192,138,69,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Fraunces', serif;
+    font-size: 19px;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+
+  .name{
+    font-family:'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(26px, 6vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .signature{
+    width: 168px;
+    height: 26px;
+    margin: 6px 0 4px -4px;
+    display:block;
+  }
+
+  .signature path{
+    fill:none;
+    stroke: var(--accent);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    animation: draw 1.4s 0.3s cubic-bezier(.65,.05,.36,1) forwards;
+  }
+
+  @keyframes draw{ to{ stroke-dashoffset: 0; } }
+
+  .title{
+    color: var(--muted);
+    font-size: 14.5px;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+
+  .divider{
+    height:1px;
+    background: var(--line);
+    margin: 30px 0 22px;
+  }
+
+  .links{
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+  }
+
+  .link-row{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 13px;
+    text-decoration:none;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--line);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .link-row:hover{
+    background: var(--surface-hover);
+    border-color: rgba(236,232,225,0.18);
+    transform: translateY(-1px);
+  }
+
+  .icon{
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .icon svg{ width: 17px; height: 17px; stroke: var(--accent); }
+
+  .link-text{ flex:1; }
+
+  .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.09em;
+    color: var(--muted);
+    text-transform: uppercase;
+    display:block;
+    margin-bottom: 2px;
+  }
+
+  .value{ font-size: 14.5px; font-weight: 500; }
+
+  .arrow{
+    width: 14px;
+    height: 14px;
+    stroke: var(--muted);
+    transition: transform 0.2s ease;
+  }
+
+  .link-row:hover .arrow{ transform: translateX(3px); stroke: var(--text); }
+
+  .footer{
+    text-align:center;
+    margin-top: 34px;
+    color: var(--muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .signature path{ animation: none; stroke-dashoffset: 0; }
+  }
+
+  @media (max-width: 380px){
+    .card{ padding: 36px 24px 28px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="monogram">JF</div>
+
+    <div class="name">Jorge Fouérè Andrade</div>
+
+    <svg class="signature" viewBox="0 0 168 26" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 18 C 14 6, 22 6, 28 16 S 42 24, 50 14 S 64 4, 72 14 S 88 22, 96 12 C 104 4, 112 4, 118 14 C 126 24, 140 20, 150 10 C 154 6, 158 6, 164 10"/>
+    </svg>
+
+    <div class="title">Technology Intelligence Specialist</div>
+
+    <div class="divider"></div>
+
+    <div class="links">
+
+      <a class="link-row" href="https://www.linkedin.com/in/jorgefouereandrade/" target="_blank" rel="noopener">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <span class="label">LinkedIn</span>
+          <span class="value">Ver perfil profesional</span>
+        </div>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <a class="link-row" href="https://app.soymach.com/rF2V/mxwpin6d" target="_blank" rel="noopener">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 3"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <span class="label">Mach</span>
+          <span class="value">Enviarme un pago</span>
+        </div>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+    </div>
+
+    <div class="footer">Tarjeta digital · toca para continuar</div>
+  </div>
+
+</body>
+</html>
